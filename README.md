@@ -1,21 +1,11 @@
 # WebPOS
 
-The demo shows a simple POS system in MVC architecture, which replaces the shell interface in aw02 with a pos web ui (https://github.com/bshbsh404/simple-pos-ui
-).
+ 完善功能：商品右下角的添加购物车按钮，购物车商品数量+、-按钮以及Delete按钮，购物车商品总价，购物车empty按钮（清空）和charge按钮
 
-![](screenshot.png)
+①商品添加
 
-To run
+![md-1](.\src\main\resources\static\images\md-1.png)
 
-```shell
-mvn clean spring-boot:run
-```
+②商品购买
 
-Currently, it just lists the products for sale with a cart with one item (just for demonstration). 
-
-Please read the tutorial at  https://www.baeldung.com/spring-boot-crud-thymeleaf and make the POS system robust and fully functional. You can also refer to other articles, for instance https://www.baeldung.com/tag/thymeleaf/ .
-
-
-
-And please elaborate your understanding in MVC architecture via this homework in your README.md.
-
+![md-2](.\src\main\resources\static\images\md-2.jpg)

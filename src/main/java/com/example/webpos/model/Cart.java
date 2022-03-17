@@ -8,10 +8,43 @@ import java.util.List;
 @Data
 public class Cart {
 
+    private double total;
+
     private List<Item> items = new ArrayList<>();
 
+    private void sumTotal(){
+        double i = 0;
+        for(Item iitem : items){
+            i += iitem.getQuantity() * iitem.getProduct().getPrice();
+        }
+        total = i;
+    }
+
+    public boolean deleteItem(Item item){
+        for(Item iitem:items){
+            if(iitem.equal(item)) {
+                items.remove(iitem);
+                sumTotal();
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean addItem(Item item) {
-        return items.add(item);
+        for(Item iitem:items) {
+            if (iitem.equal(item)) {
+                iitem.add(item);
+                if (iitem.isEmpty()) {
+                    items.remove(iitem);
+                }
+                sumTotal();
+                return true;
+            }
+        }
+        if(!item.isEmpty())items.add(item);
+        sumTotal();
+        return true;
     }
 
     @Override

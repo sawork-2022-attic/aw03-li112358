@@ -13,4 +13,24 @@ public class Item {
     public String toString(){
         return product.toString() +"\t" + quantity;
     }
+
+    public boolean equal(Item item){
+        return this.product.getId() == item.product.getId();
+    }
+
+    public boolean add(Item item){
+        int tmp = quantity + item.quantity;
+        if(tmp >= 0){
+            quantity = tmp;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean isEmpty(){
+        return quantity <= 0;
+    }
+
 }
